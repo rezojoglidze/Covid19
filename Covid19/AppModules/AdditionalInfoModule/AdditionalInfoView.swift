@@ -27,9 +27,8 @@ final class AdditionalInfoView: UserInterface {
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
-        navigationItem.title = "დეტალები"
+        configureView()
     }
     
     //MARK: View Setup
@@ -37,6 +36,13 @@ final class AdditionalInfoView: UserInterface {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "AdditionalCell", bundle: nil), forCellWithReuseIdentifier: "AdditionalCell")
+    }
+    
+    func configureView() {
+        navigationItem.title = "დეტალები"
+        if self.traitCollection.userInterfaceStyle != .dark {
+            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
     }
     
     func makeArray(with country: Country) {
@@ -82,7 +88,7 @@ extension AdditionalInfoView: UICollectionViewDelegateFlowLayout, UICollectionVi
         let sectionInserts = flowLayout.sectionInset.left + flowLayout.sectionInset.right
         let adjustedWidth = collectionViewWidth - spaceBetweenCells - sectionInserts
         let width: CGFloat = floor(adjustedWidth / columns)
-        let height: CGFloat = 20
+        let height: CGFloat = 25
         return CGSize(width: width, height: height)
     }
 }

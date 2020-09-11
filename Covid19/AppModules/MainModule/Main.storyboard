@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-Fd-ZU8">
-                                <rect key="frame" x="5" y="47" width="404" height="849"/>
+                                <rect key="frame" x="0.0" y="49" width="414" height="847"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="etI-by-020">
                                     <size key="itemSize" width="128" height="128"/>
@@ -67,18 +67,17 @@
                                 <rect key="frame" x="175" y="337.5" width="64" height="64"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ydh-WL-kbv" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="Ibk-ao-pXQ"/>
-                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="5" id="OQb-J4-Clx"/>
+                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="OQb-J4-Clx"/>
                             <constraint firstItem="TRb-eT-3fm" firstAttribute="top" secondItem="UsR-eE-sZu" secondAttribute="bottom" constant="45" id="OR0-Rz-IxV"/>
                             <constraint firstAttribute="trailing" secondItem="UsR-eE-sZu" secondAttribute="trailing" constant="60" id="QxE-mh-Pxd"/>
                             <constraint firstItem="UsR-eE-sZu" firstAttribute="top" secondItem="ydh-WL-kbv" secondAttribute="bottom" constant="25" id="XQ4-H3-Eyg"/>
                             <constraint firstItem="UsR-eE-sZu" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="60" id="aZq-Si-fNG"/>
                             <constraint firstAttribute="bottom" secondItem="y5V-Fd-ZU8" secondAttribute="bottom" id="bdm-oz-WGf"/>
-                            <constraint firstAttribute="trailing" secondItem="y5V-Fd-ZU8" secondAttribute="trailing" constant="5" id="cCw-eI-r2o"/>
+                            <constraint firstAttribute="trailing" secondItem="y5V-Fd-ZU8" secondAttribute="trailing" id="cCw-eI-r2o"/>
                             <constraint firstItem="TRb-eT-3fm" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="20" id="egR-8l-7vp"/>
-                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="3" id="fLo-IE-oe0"/>
+                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="5" id="fLo-IE-oe0"/>
                             <constraint firstItem="UsR-eE-sZu" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="ghf-6D-1WQ"/>
                             <constraint firstItem="UsR-eE-sZu" firstAttribute="centerY" secondItem="kgt-o0-aP8" secondAttribute="centerY" id="kQ7-mC-FMd"/>
                             <constraint firstAttribute="trailing" secondItem="TRb-eT-3fm" secondAttribute="trailing" constant="20" id="nAe-tU-2Rt"/>
@@ -93,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-AG-NXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-533.33333333333337" y="270.53571428571428"/>
+            <point key="canvasLocation" x="-304" y="232"/>
         </scene>
     </scenes>
     <resources>

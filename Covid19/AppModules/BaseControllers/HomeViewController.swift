@@ -10,14 +10,17 @@ import Foundation
 import Viperit
 
 class HomeViewController: UserInterface {
-    
+        
     override func viewDidLoad() {
         if _presenter != nil {
             super.viewDidLoad()
         }
-        setupRightBarButtonItem()
+       configureNavigationBar()
+    }
+    
+    func configureNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeueLTGEO-75Bold", size: 15)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeueLTGEO-75Bold", size: 15)!]
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -45,9 +48,5 @@ class HomeViewController: UserInterface {
         if _presenter != nil {
             super.viewDidDisappear(animated)
         }
-    }
-    
-    private func setupRightBarButtonItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIImageView(image: #imageLiteral(resourceName: "icon-profile")))
     }
 }

@@ -24,9 +24,12 @@ final class MainView: HomeViewController {
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
         setupNavigation()
+        
+        if self.traitCollection.userInterfaceStyle != .dark {
+            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
     }
     
     //MARK: IBActions
@@ -55,6 +58,10 @@ final class MainView: HomeViewController {
         self.lastActivityErrorMsgLbl.isHidden = false
         self.refreshBtn.isHidden = false
         self.errorIcon.isHidden = false
+        if self.traitCollection.userInterfaceStyle == .dark {
+            lastActivityErrorMsgLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            refreshBtn.alpha = 0.85
+        }
         refreshBtn.setTitle("დარეფრეშება".uppercased(), for: .normal)
     }
 }
@@ -113,36 +120,6 @@ extension MainView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
         let width: CGFloat = floor(adjustedWidth / columns)
         let height: CGFloat = 100
         return (width, height)
-    }
-}
-
-
-extension UserDefaults {
-    open func setStruct<T: Codable>(_ value: T?, forKey defaultName: String){
-        let data = try? JSONEncoder().encode(value)
-        set(data, forKey: defaultName)
-    }
-    
-    open func structData<T>(_ type: T.Type, forKey defaultName: String) -> T? where T : Decodable {
-        guard let encodedData = data(forKey: defaultName) else {
-            return nil
-        }
-        
-        return try! JSONDecoder().decode(type, from: encodedData)
-    }
-    
-    open func setStructArray<T: Codable>(_ value: [T], forKey defaultName: String){
-        let data = value.map { try? JSONEncoder().encode($0) }
-        
-        set(data, forKey: defaultName)
-    }
-    
-    open func structArrayData<T>(_ type: T.Type, forKey defaultName: String) -> [T] where T : Decodable {
-        guard let encodedData = array(forKey: defaultName) as? [Data] else {
-            return []
-        }
-        
-        return encodedData.map { try! JSONDecoder().decode(type, from: $0) }
     }
 }
 

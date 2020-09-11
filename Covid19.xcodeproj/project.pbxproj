@@ -17,6 +17,7 @@
 		F27EE72625093EDA00BB1D46 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F27EE72425093EDA00BB1D46 /* MainCell.xib */; };
 		F27EE72C250946C800BB1D46 /* AdditionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27EE72A250946C800BB1D46 /* AdditionalCell.swift */; };
 		F27EE72D250946C800BB1D46 /* AdditionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F27EE72B250946C800BB1D46 /* AdditionalCell.xib */; };
+		F292EA6B250C11B40072E1CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292EA6A250C11B40072E1CD /* Extensions.swift */; };
 		F2BDAE0E250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0B250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		F2BDAE0F250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0C250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		F2BDAE10250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0D250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf */; };
@@ -61,6 +62,7 @@
 		F27EE72425093EDA00BB1D46 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		F27EE72A250946C800BB1D46 /* AdditionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalCell.swift; sourceTree = "<group>"; };
 		F27EE72B250946C800BB1D46 /* AdditionalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalCell.xib; sourceTree = "<group>"; };
+		F292EA6A250C11B40072E1CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F2BDAE0B250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		F2BDAE0C250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		F2BDAE0D250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				F2E91C2A2509125E00B9E276 /* UIExtensions.swift */,
+				F292EA6A250C11B40072E1CD /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				F2FABE462508DCD700975B4C /* Constants.swift in Sources */,
 				F2F862292508E32C00F05C8F /* MainPresenter.swift in Sources */,
 				F27EE72C250946C800BB1D46 /* AdditionalCell.swift in Sources */,
+				F292EA6B250C11B40072E1CD /* Extensions.swift in Sources */,
 				F2F8620D2508E16000F05C8F /* BaseAPI.swift in Sources */,
 				F2E91C3A2509240F00B9E276 /* AdditionalInfoDisplayData.swift in Sources */,
 				F2E91C3D2509240F00B9E276 /* AdditionalInfoModuleApi.swift in Sources */,

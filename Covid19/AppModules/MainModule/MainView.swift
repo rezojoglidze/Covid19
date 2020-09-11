@@ -8,7 +8,6 @@
 
 import UIKit
 import Viperit
-import Network
 
 //MARK: MainView Class
 final class MainView: HomeViewController {
@@ -18,6 +17,9 @@ final class MainView: HomeViewController {
    
     //MARK: IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var lastActivityErrorMsgLbl: UILabel!
+    @IBOutlet weak var errorIcon: UIImageView!
+    @IBOutlet weak var refreshBtn: UIButton!
     
     //MARK: View life cycle
     override func viewDidLoad() {
@@ -25,15 +27,16 @@ final class MainView: HomeViewController {
         
         configureCollectionView()
         setupNavigation()
-        checkNetworkConnection()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        defaults.set(countries, forKey: "SavedLastInfo")
-        print("shenaxulia -> \(countries)")
+    //MARK: IBActions
+    @IBAction func refreshBtnTapped(_ sender: Any) {
+        self.startLoading()
+        self.lastActivityErrorMsgLbl.isHidden = true
+        self.refreshBtn.isHidden = true
+        self.errorIcon.isHidden = true
+        presenter.didTapRefreshBtn()
     }
-    
     
     //MARK: View Setup
     func configureCollectionView() {        
@@ -44,30 +47,15 @@ final class MainView: HomeViewController {
     
     func setupNavigation() {
         navigationItem.title = "Covid19"
-        self.navigationItem.largeTitleDisplayMode = .never
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.4392156863, green: 0.3882352941, blue: 0.9176470588, alpha: 1)
     }
     
-    func checkNetworkConnection() {
-        let monitor = NWPathMonitor()
-        let queue = DispatchQueue(label: "InternetConnectionMonitor")
-        
-        monitor.pathUpdateHandler = { pathUpdateHandler in
-            if pathUpdateHandler.status == .satisfied {
-                print("Internet connection is on.")
-            } else {
-                DispatchQueue.main.async {
-                    self.presenter.didGetConnectionError()
-                    
-//                    print("There's no internet connection.")
-                    let defaults = UserDefaults.standard
-                    self.countries = defaults.array(forKey: "SavedLastInfo")  as? [Country] ?? [Country]()
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-        monitor.start(queue: queue)
+    func configureLastActivityIsEmptyView() {
+        self.lastActivityErrorMsgLbl.isHidden = false
+        self.refreshBtn.isHidden = false
+        self.errorIcon.isHidden = false
+        refreshBtn.setTitle("დარეფრეშება".uppercased(), for: .normal)
     }
 }
 
@@ -76,7 +64,14 @@ extension MainView: MainViewApi {
     func updateData(with summary: Summary) {
         self.stopLoading()
         self.countries = summary.Countries
+        UserDefaults.standard.setStructArray(summary.Countries, forKey: Constants.Keys.lastAcitivtyDate)
         collectionView.reloadData()
+    }
+    
+    func showLastActivity(isEmpty: Bool) {
+        self.stopLoading()
+        isEmpty ? configureLastActivityIsEmptyView() : (self.countries = UserDefaults.standard.structArrayData(Country.self, forKey: Constants.Keys.lastAcitivtyDate))
+        self.collectionView.reloadData()
     }
 }
 
@@ -89,26 +84,66 @@ extension MainView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainCell
-        cell.backgroundColor = #colorLiteral(red: 0.8549019608, green: 0.1215686275, blue: 0.2392156863, alpha: 1)
         cell.configure(with: countries[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let columns: CGFloat = 2
-        let collectionViewWidth = collectionView.bounds.width
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let (width,height) = configureCollectionView(columns: 2, layout: collectionViewLayout)
+            return CGSize(width: width , height: height)
+
+        } else {
+            let (width,height) = configureCollectionView(columns: 1, layout: collectionViewLayout)
+            return CGSize(width: width , height: height)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didTapCollectionViewItem(country: countries[indexPath.row])
+    }
+    
+    func configureCollectionView(columns: CGFloat, layout collectionViewLayout: UICollectionViewLayout) -> (width: CGFloat, height: CGFloat) {
+        let columns: CGFloat = columns
+        let collectionViewWidth = collectionView.bounds.width - 10
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
         let sectionInserts = flowLayout.sectionInset.left + flowLayout.sectionInset.right
         let adjustedWidth = collectionViewWidth - spaceBetweenCells - sectionInserts
         let width: CGFloat = floor(adjustedWidth / columns)
-        let height: CGFloat = 150
-        return CGSize(width: width, height: height)
+        let height: CGFloat = 100
+        return (width, height)
+    }
+}
+
+
+extension UserDefaults {
+    open func setStruct<T: Codable>(_ value: T?, forKey defaultName: String){
+        let data = try? JSONEncoder().encode(value)
+        set(data, forKey: defaultName)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.didTapCollectionViewItem(country: countries[indexPath.row])
+    open func structData<T>(_ type: T.Type, forKey defaultName: String) -> T? where T : Decodable {
+        guard let encodedData = data(forKey: defaultName) else {
+            return nil
+        }
+        
+        return try! JSONDecoder().decode(type, from: encodedData)
+    }
+    
+    open func setStructArray<T: Codable>(_ value: [T], forKey defaultName: String){
+        let data = value.map { try? JSONEncoder().encode($0) }
+        
+        set(data, forKey: defaultName)
+    }
+    
+    open func structArrayData<T>(_ type: T.Type, forKey defaultName: String) -> [T] where T : Decodable {
+        guard let encodedData = array(forKey: defaultName) as? [Data] else {
+            return []
+        }
+        
+        return encodedData.map { try! JSONDecoder().decode(type, from: $0) }
     }
 }
 

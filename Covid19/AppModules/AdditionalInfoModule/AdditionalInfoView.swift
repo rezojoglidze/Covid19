@@ -73,6 +73,18 @@ extension AdditionalInfoView: UICollectionViewDelegateFlowLayout, UICollectionVi
         cell.configure(with: additionalInfo[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let columns: CGFloat = 1
+        let collectionViewWidth = collectionView.bounds.width - 20
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
+        let sectionInserts = flowLayout.sectionInset.left + flowLayout.sectionInset.right
+        let adjustedWidth = collectionViewWidth - spaceBetweenCells - sectionInserts
+        let width: CGFloat = floor(adjustedWidth / columns)
+        let height: CGFloat = 20
+        return CGSize(width: width, height: height)
+    }
 }
 
 // MARK: - AdditionalInfoView Viper Components API

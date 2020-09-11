@@ -13,8 +13,6 @@ import Viperit
 final class AdditionalInfoPresenter: Presenter {
     override func setupView(data: Any) {
         if let country = data as? Country {
-            print("movoiiidaaa")
-            print(country)
             self.view.updateView(country: country)
         }
     }

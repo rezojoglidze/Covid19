@@ -12,12 +12,15 @@
 		F21AADC82508CD5400073BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21AADC72508CD5400073BF9 /* SceneDelegate.swift */; };
 		F21AADCF2508CD5600073BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21AADCE2508CD5600073BF9 /* Assets.xcassets */; };
 		F21AADD22508CD5600073BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21AADD02508CD5600073BF9 /* LaunchScreen.storyboard */; };
-		F21BCED9250A4A07003E7730 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F21BCED8250A4A07003E7730 /* GoogleService-Info.plist */; };
 		F24227D2250A671E00FAAD73 /* Notification.apns in Resources */ = {isa = PBXBuildFile; fileRef = F24227D1250A671E00FAAD73 /* Notification.apns */; };
 		F27EE72525093EDA00BB1D46 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27EE72325093EDA00BB1D46 /* MainCell.swift */; };
 		F27EE72625093EDA00BB1D46 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F27EE72425093EDA00BB1D46 /* MainCell.xib */; };
 		F27EE72C250946C800BB1D46 /* AdditionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27EE72A250946C800BB1D46 /* AdditionalCell.swift */; };
 		F27EE72D250946C800BB1D46 /* AdditionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F27EE72B250946C800BB1D46 /* AdditionalCell.xib */; };
+		F2BDAE0E250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0B250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf */; };
+		F2BDAE0F250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0C250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf */; };
+		F2BDAE10250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2BDAE0D250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf */; };
+		F2D9C317250BA0AD00FDA472 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D9C316250BA0AD00FDA472 /* GoogleService-Info.plist */; };
 		F2E91C1E2508F2B000B9E276 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E91C1D2508F2B000B9E276 /* AppManager.swift */; };
 		F2E91C282509045700B9E276 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E91C272509045700B9E276 /* Summary.swift */; };
 		F2E91C2B2509125E00B9E276 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E91C2A2509125E00B9E276 /* UIExtensions.swift */; };
@@ -53,12 +56,15 @@
 		F21AADD12508CD5600073BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F21AADD32508CD5600073BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21BCED5250A342E003E7730 /* Covid19.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Covid19.entitlements; sourceTree = "<group>"; };
-		F21BCED8250A4A07003E7730 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F24227D1250A671E00FAAD73 /* Notification.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notification.apns; sourceTree = "<group>"; };
 		F27EE72325093EDA00BB1D46 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		F27EE72425093EDA00BB1D46 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		F27EE72A250946C800BB1D46 /* AdditionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalCell.swift; sourceTree = "<group>"; };
 		F27EE72B250946C800BB1D46 /* AdditionalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalCell.xib; sourceTree = "<group>"; };
+		F2BDAE0B250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
+		F2BDAE0C250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
+		F2BDAE0D250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
+		F2D9C316250BA0AD00FDA472 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2E91C1D2508F2B000B9E276 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		F2E91C272509045700B9E276 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		F2E91C2A2509125E00B9E276 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			children = (
 				F2E91C2C250912FF00B9E276 /* Loader */,
 				F21AADCE2508CD5600073BF9 /* Assets.xcassets */,
+				F2BDAE0A250B761C00114D29 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F21AADD32508CD5600073BF9 /* Info.plist */,
-				F21BCED8250A4A07003E7730 /* GoogleService-Info.plist */,
+				F2D9C316250BA0AD00FDA472 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,6 +176,16 @@
 				F27EE72B250946C800BB1D46 /* AdditionalCell.xib */,
 			);
 			path = AdditionalCell;
+			sourceTree = "<group>";
+		};
+		F2BDAE0A250B761C00114D29 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2BDAE0B250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf */,
+				F2BDAE0C250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf */,
+				F2BDAE0D250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F2E91C1F2508F81F00B9E276 /* MainItemCell */ = {
@@ -359,11 +376,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BDAE0E250B761C00114D29 /* HelveticaNeueLTGEO-65Medium.otf in Resources */,
 				F27EE72D250946C800BB1D46 /* AdditionalCell.xib in Resources */,
-				F21BCED9250A4A07003E7730 /* GoogleService-Info.plist in Resources */,
+				F2BDAE10250B761C00114D29 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
+				F2BDAE0F250B761C00114D29 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
 				F2F862272508E32C00F05C8F /* Main.storyboard in Resources */,
 				F24227D2250A671E00FAAD73 /* Notification.apns in Resources */,
 				F27EE72625093EDA00BB1D46 /* MainCell.xib in Resources */,
+				F2D9C317250BA0AD00FDA472 /* GoogleService-Info.plist in Resources */,
 				F21AADD22508CD5600073BF9 /* LaunchScreen.storyboard in Resources */,
 				F2E91C392509240F00B9E276 /* AdditionalInfo.storyboard in Resources */,
 				F2E91C30250912FF00B9E276 /* Loader.gif in Resources */,

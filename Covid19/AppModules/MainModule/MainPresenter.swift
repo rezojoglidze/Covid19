@@ -14,7 +14,7 @@ final class MainPresenter: Presenter {
     
     override func viewHasLoaded() {
         view.startLoading()
-        interactor.getSummary()
+        interactor.checkNetworkConnection()
     }
 }
 
@@ -23,6 +23,14 @@ extension MainPresenter: MainPresenterApi {
  
     func summaryDidLoaded(with summary: Summary) {
         view.updateData(with: summary)
+    }
+    
+    func lastActivityDidLoad(isEmpty: Bool) {
+        view.showLastActivity(isEmpty: isEmpty)
+    }
+    
+    func didTapRefreshBtn() {
+        interactor.checkNetworkConnection()
     }
     
     func didTapCollectionViewItem(country: Country) {

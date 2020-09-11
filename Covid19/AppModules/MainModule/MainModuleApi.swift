@@ -18,6 +18,7 @@ protocol MainRouterApi: RouterProtocol {
 //MARK: - MainView API
 protocol MainViewApi: UserInterfaceProtocol {
     func updateData(with summary: Summary)
+    func showLastActivity(isEmpty: Bool)
     func startLoading()
 }
 
@@ -31,9 +32,13 @@ protocol MainPresenterApi: PresenterProtocol {
     //View -> Presenter
     func didTapCollectionViewItem(country: Country)
     func didGetConnectionError()
+    func didTapRefreshBtn()
+    
+    //router -> Presenter
+    func lastActivityDidLoad(isEmpty: Bool)
 }
 
 //MARK: - MainInteractor API
 protocol MainInteractorApi: InteractorProtocol {
-    func getSummary()
+    func checkNetworkConnection()
 }

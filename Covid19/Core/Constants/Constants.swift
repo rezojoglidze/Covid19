@@ -10,6 +10,10 @@ import Foundation
 
 struct Constants {
     
+    struct Keys {
+        static let lastAcitivtyDate = "lastAcitivtyDate"
+    }
+    
     struct Api {
         static let baseUrl = "https://api.covid19api.com"
         

@@ -5,6 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLTGEO-65Medium.otf">
+            <string>HelveticaNeueLTGEO-65Medium</string>
+        </array>
+        <array key="HelveticaNeueLTGEO-75Bold.otf">
+            <string>HelveticaNeueLTGEO-75Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View-->
         <scene sceneID="htw-l1-ahc">
@@ -19,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-Fd-ZU8">
-                                <rect key="frame" x="0.0" y="49" width="414" height="847"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="etI-by-020">
                                     <size key="itemSize" width="128" height="128"/>
@@ -29,22 +37,66 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სამწუხაროდ, თქვენ არ გაქვთ ბოლო აქტივობა" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-eE-sZu">
+                                <rect key="frame" x="60" y="426.5" width="294" height="43.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="18"/>
+                                <color key="textColor" red="0.058823529411764705" green="0.050980392156862744" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-eT-3fm">
+                                <rect key="frame" x="20" y="515" width="374" height="60"/>
+                                <color key="backgroundColor" red="0.4392156862745098" green="0.38823529411764707" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9UO-IH-CTv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="15"/>
+                                <state key="normal" title="დარეფრეშება">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="refreshBtnTapped:" destination="xqD-av-Raz" eventType="touchUpInside" id="uE2-p1-X6m"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FailedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-WL-kbv">
+                                <rect key="frame" x="175" y="337.5" width="64" height="64"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="5" id="6Dw-uX-w28"/>
+                            <constraint firstItem="ydh-WL-kbv" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="Ibk-ao-pXQ"/>
                             <constraint firstItem="y5V-Fd-ZU8" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="OQb-J4-Clx"/>
+                            <constraint firstItem="TRb-eT-3fm" firstAttribute="top" secondItem="UsR-eE-sZu" secondAttribute="bottom" constant="45" id="OR0-Rz-IxV"/>
+                            <constraint firstAttribute="trailing" secondItem="UsR-eE-sZu" secondAttribute="trailing" constant="60" id="QxE-mh-Pxd"/>
+                            <constraint firstItem="UsR-eE-sZu" firstAttribute="top" secondItem="ydh-WL-kbv" secondAttribute="bottom" constant="25" id="XQ4-H3-Eyg"/>
+                            <constraint firstItem="UsR-eE-sZu" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="60" id="aZq-Si-fNG"/>
                             <constraint firstAttribute="bottom" secondItem="y5V-Fd-ZU8" secondAttribute="bottom" id="bdm-oz-WGf"/>
                             <constraint firstAttribute="trailing" secondItem="y5V-Fd-ZU8" secondAttribute="trailing" id="cCw-eI-r2o"/>
+                            <constraint firstItem="TRb-eT-3fm" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="20" id="egR-8l-7vp"/>
+                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="10" id="fLo-IE-oe0"/>
+                            <constraint firstItem="UsR-eE-sZu" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="ghf-6D-1WQ"/>
+                            <constraint firstItem="UsR-eE-sZu" firstAttribute="centerY" secondItem="kgt-o0-aP8" secondAttribute="centerY" id="kQ7-mC-FMd"/>
+                            <constraint firstAttribute="trailing" secondItem="TRb-eT-3fm" secondAttribute="trailing" constant="20" id="nAe-tU-2Rt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="y5V-Fd-ZU8" id="9dz-f3-rAu"/>
+                        <outlet property="errorIcon" destination="ydh-WL-kbv" id="x8R-pF-hF4"/>
+                        <outlet property="lastActivityErrorMsgLbl" destination="UsR-eE-sZu" id="9Tb-93-9KN"/>
+                        <outlet property="refreshBtn" destination="TRb-eT-3fm" id="ELd-jd-nES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-AG-NXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="236"/>
+            <point key="canvasLocation" x="-533.33333333333337" y="270.53571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FailedIcon" width="64" height="64"/>
+    </resources>
 </document>

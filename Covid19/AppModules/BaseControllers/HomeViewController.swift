@@ -17,6 +17,8 @@ class HomeViewController: UserInterface {
         }
         setupRightBarButtonItem()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeueLTGEO-75Bold", size: 15)!]
+        self.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }

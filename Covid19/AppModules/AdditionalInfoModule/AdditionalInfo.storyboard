@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GDK-Nk-XuM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AHT-Ha-UtA">
                                     <size key="itemSize" width="128" height="128"/>
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="GDK-Nk-XuM" secondAttribute="bottom" id="FhN-J6-pvm"/>
-                            <constraint firstItem="GDK-Nk-XuM" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" id="cs4-PT-m2F"/>
+                            <constraint firstItem="GDK-Nk-XuM" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="10" id="cs4-PT-m2F"/>
                             <constraint firstItem="GDK-Nk-XuM" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="hyf-md-GDN"/>
                             <constraint firstAttribute="trailing" secondItem="GDK-Nk-XuM" secondAttribute="trailing" id="urW-b0-8Wv"/>
                         </constraints>

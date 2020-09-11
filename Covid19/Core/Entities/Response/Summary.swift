@@ -24,7 +24,7 @@ struct Global: Decodable {
     let TotalRecovered: Int
 }
 
-struct Country: Decodable {
+struct Country: Codable {
     let Country: String
     let CountryCode: String
     let Slug: String

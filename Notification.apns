@@ -1,0 +1,8 @@
+{
+    "Simulator Target Bundle": "com.rezojoglidze.Covid2019",
+    "aps": {
+        "alert": "Everything is Done ^_^",
+        "badge": 1,
+        "sound": "default"
+    }
+}

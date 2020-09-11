@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainCell" customModule="Covid19" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="514" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="514" height="152"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtJ-fi-E8S">
+                        <rect key="frame" x="236" y="35" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fXH-LP-OZx">
+                        <rect key="frame" x="20" y="60.5" width="195.5" height="71.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="left" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-Cc-Vu1">
+                                <rect key="frame" x="0.0" y="0.0" width="195.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="დადასტურებული:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dh-fo-b7w">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGr-K5-8Lv">
+                                        <rect key="frame" x="189" y="0.0" width="6.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="K5K-Jf-oLd"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfG-Fa-Aua">
+                                <rect key="frame" x="0.0" y="25.5" width="195.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="გამოჯანმრთელებული:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEZ-gD-dxF">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8al-4g-0gL">
+                                        <rect key="frame" x="189" y="0.0" width="6.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Mnw-1s-JaZ">
+                                <rect key="frame" x="0.0" y="51" width="195.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="გადრაცვლილი:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-c5-xtI">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thB-SI-fqs">
+                                        <rect key="frame" x="189" y="0.0" width="6.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowRightIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bC3-57-9CD">
+                        <rect key="frame" x="493" y="91" width="6" height="10.5"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="bC3-57-9CD" firstAttribute="centerY" secondItem="fXH-LP-OZx" secondAttribute="centerY" id="6Tp-k3-rd2"/>
+                <constraint firstAttribute="bottom" secondItem="fXH-LP-OZx" secondAttribute="bottom" constant="20" id="8jW-eL-rZD"/>
+                <constraint firstItem="DtJ-fi-E8S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ds9-X8-Q5D"/>
+                <constraint firstItem="DtJ-fi-E8S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="KfX-EV-1BX"/>
+                <constraint firstAttribute="trailing" secondItem="bC3-57-9CD" secondAttribute="trailing" constant="15" id="UKI-eQ-puj"/>
+                <constraint firstItem="bC3-57-9CD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fXH-LP-OZx" secondAttribute="trailing" constant="100" id="dB7-GA-vo7"/>
+                <constraint firstItem="fXH-LP-OZx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="jUr-xq-9I1"/>
+                <constraint firstItem="fXH-LP-OZx" firstAttribute="top" secondItem="DtJ-fi-E8S" secondAttribute="bottom" constant="5" id="nmS-zh-oWb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="514" height="152"/>
+            <connections>
+                <outlet property="RecoveredNumberLbl" destination="8al-4g-0gL" id="HEQ-g6-Vp6"/>
+                <outlet property="confirmedCasesLbl" destination="lGr-K5-8Lv" id="RtU-vT-RJz"/>
+                <outlet property="countryLbl" destination="DtJ-fi-E8S" id="MzP-CI-5fS"/>
+                <outlet property="deadNumberLbl" destination="thB-SI-fqs" id="ydi-7J-ePN"/>
+            </connections>
+            <point key="canvasLocation" x="-154" y="60"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ArrowRightIcon" width="6" height="10.5"/>
+    </resources>
+</document>

@@ -90,10 +90,9 @@ extension MainView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.orientation.isLandscape {
             let (width,height) = configureCollectionView(columns: 2, layout: collectionViewLayout)
             return CGSize(width: width , height: height)
-
         } else {
             let (width,height) = configureCollectionView(columns: 1, layout: collectionViewLayout)
             return CGSize(width: width , height: height)

@@ -63,8 +63,8 @@ final class MainView: HomeViewController {
 extension MainView: MainViewApi {
     func updateData(with summary: Summary) {
         self.stopLoading()
-        self.countries = summary.Countries
-        UserDefaults.standard.setStructArray(summary.Countries, forKey: Constants.Keys.lastAcitivtyDate)
+        self.countries = summary.countries
+        UserDefaults.standard.setStructArray(summary.countries, forKey: Constants.Keys.lastAcitivtyDate)
         collectionView.reloadData()
     }
     

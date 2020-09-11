@@ -22,10 +22,10 @@ class MainCell: UICollectionViewCell {
     
     //MARK: View Setup
     func configure(with country: Country)  {
-        self.confirmedCasesLbl.text = String(country.TotalConfirmed)
-        self.RecoveredNumberLbl.text = String(country.TotalRecovered)
-        self.deadNumberLbl.text = String(country.TotalDeaths)
-        self.countryLbl.text = String(country.Country)
+        self.confirmedCasesLbl.text = String(country.totalConfirmed)
+        self.RecoveredNumberLbl.text = String(country.totalRecovered)
+        self.deadNumberLbl.text = String(country.totalDeaths)
+        self.countryLbl.text = String(country.country)
         
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.borderWidth = 1.0

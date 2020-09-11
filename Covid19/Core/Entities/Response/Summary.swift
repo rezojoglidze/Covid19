@@ -8,30 +8,57 @@
 
 import Foundation
 
-struct Summary: Decodable {
-    let Message: String?
-    let Global: Global
-    let Countries: [Country]
+struct Summary: Codable {
+    let message: String?
+    let global: Global
+    let countries: [Country]
+    
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case global = "Global"
+        case countries = "Countries"
+    }
 }
 
 
-struct Global: Decodable {
-    let NewConfirmed: Int
-    let TotalConfirmed: Int
-    let NewDeaths: Int
-    let TotalDeaths: Int
-    let NewRecovered: Int
-    let TotalRecovered: Int
+struct Global: Codable {
+    let newConfirmed: Int
+    let totalConfirmed: Int
+    let newDeaths: Int
+    let totalDeaths: Int
+    let newRecovered: Int
+    let totalRecovered: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case newConfirmed = "NewConfirmed"
+        case totalConfirmed = "TotalConfirmed"
+        case newDeaths = "NewDeaths"
+        case totalDeaths = "TotalDeaths"
+        case newRecovered = "NewRecovered"
+        case totalRecovered = "TotalRecovered"
+    }
 }
 
 struct Country: Codable {
-    let Country: String
-    let CountryCode: String
-    let Slug: String
-    let NewConfirmed: Int
-    let TotalConfirmed: Int
-    let NewDeaths: Int
-    let TotalDeaths: Int
-    let NewRecovered: Int
-    let TotalRecovered: Int
+    let country: String
+    let countryCode: String
+    let slug: String
+    let newConfirmed: Int
+    let totalConfirmed: Int
+    let newDeaths: Int
+    let totalDeaths: Int
+    let newRecovered: Int
+    let totalRecovered: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case country = "Country"
+        case countryCode = "CountryCode"
+        case slug = "Slug"
+        case newConfirmed = "NewConfirmed"
+        case totalConfirmed = "TotalConfirmed"
+        case newDeaths = "NewDeaths"
+        case totalDeaths = "TotalDeaths"
+        case newRecovered = "NewRecovered"
+        case totalRecovered = "TotalRecovered"
+    }
 }

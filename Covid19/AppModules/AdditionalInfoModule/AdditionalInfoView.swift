@@ -41,13 +41,13 @@ final class AdditionalInfoView: UserInterface {
     
     func makeArray(with country: Country) {
         additionalInfo = [
-            AdditionalInfo(title: "ქვეყანა", description: country.Country),
-            AdditionalInfo(title: "ახალი დადასტურებული", description: String(country.NewConfirmed)),
-            AdditionalInfo(title: "სულ ინფიცირებული", description: String(country.TotalConfirmed)),
-            AdditionalInfo(title: "ახალი გარდაცვლილი", description: String(country.NewDeaths)),
-            AdditionalInfo(title: "სულ გადრაცვლილი", description: String(country.TotalDeaths)),
-            AdditionalInfo(title: "ახალი გამოჯანმრთელებული", description: String(country.NewRecovered)),
-            AdditionalInfo(title: "სულ გამოჯანმრთელებული", description: String(country.TotalRecovered))
+            AdditionalInfo(title: "ქვეყანა", description: country.country),
+            AdditionalInfo(title: "ახალი დადასტურებული", description: String(country.newConfirmed)),
+            AdditionalInfo(title: "სულ ინფიცირებული", description: String(country.totalConfirmed)),
+            AdditionalInfo(title: "ახალი გარდაცვლილი", description: String(country.newDeaths)),
+            AdditionalInfo(title: "სულ გადრაცვლილი", description: String(country.totalDeaths)),
+            AdditionalInfo(title: "ახალი გამოჯანმრთელებული", description: String(country.newRecovered)),
+            AdditionalInfo(title: "სულ გამოჯანმრთელებული", description: String(country.totalRecovered))
         ]
         collectionView.reloadData()
     }

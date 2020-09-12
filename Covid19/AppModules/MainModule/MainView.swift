@@ -32,6 +32,15 @@ final class MainView: HomeViewController {
         }
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        guard UIApplication.shared.applicationState == .inactive else {
+            return
+        }
+        self.traitCollection.userInterfaceStyle != .dark ? (view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)) : (view.backgroundColor = UIColor.black)
+    }
+    
     //MARK: IBActions
     @IBAction func refreshBtnTapped(_ sender: Any) {
         self.startLoading()

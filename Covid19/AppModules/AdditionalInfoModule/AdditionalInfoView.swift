@@ -18,7 +18,6 @@ final class AdditionalInfoView: UserInterface {
     
     //MARK: class Variables
     var additionalInfo: [AdditionalInfo] = []
-    var defaultArray : [String] = []
     
     //MARK: IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -45,7 +44,7 @@ final class AdditionalInfoView: UserInterface {
         }
     }
     
-    func makeArray(with country: Country) {
+    func updateAdditionalInfo(with country: Country) {
         additionalInfo = [
             AdditionalInfo(title: "ქვეყანა", description: country.country),
             AdditionalInfo(title: "ახალი დადასტურებული", description: String(country.newConfirmed)),
@@ -63,7 +62,7 @@ final class AdditionalInfoView: UserInterface {
 extension AdditionalInfoView: AdditionalInfoViewApi {
     func updateView(country: Country) {
         loadViewIfNeeded()
-        makeArray(with: country)
+        updateAdditionalInfo(with: country)
     }
 }
 

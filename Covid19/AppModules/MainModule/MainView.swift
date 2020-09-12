@@ -26,27 +26,21 @@ final class MainView: HomeViewController {
         super.viewDidLoad()
         configureCollectionView()
         setupNavigation()
-        
-        if self.traitCollection.userInterfaceStyle != .dark {
-            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }
+        checkDarkTheme()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        
-        guard UIApplication.shared.applicationState == .inactive else {
-            return
-        }
+        guard UIApplication.shared.applicationState == .inactive else { return }
+
         self.traitCollection.userInterfaceStyle != .dark ? (view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)) : (view.backgroundColor = UIColor.black)
+        collectionView.reloadData()
     }
     
     //MARK: IBActions
     @IBAction func refreshBtnTapped(_ sender: Any) {
         self.startLoading()
-        self.lastActivityErrorMsgLbl.isHidden = true
-        self.refreshBtn.isHidden = true
-        self.errorIcon.isHidden = true
+        [lastActivityErrorMsgLbl,refreshBtn,errorIcon].forEach { $0?.isHidden = true}
         presenter.didTapRefreshBtn()
     }
     
@@ -63,15 +57,19 @@ final class MainView: HomeViewController {
         navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.4392156863, green: 0.3882352941, blue: 0.9176470588, alpha: 1)
     }
     
+    func checkDarkTheme() {
+        if self.traitCollection.userInterfaceStyle != .dark {
+            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+    }
+    
     func configureLastActivityIsEmptyView() {
-        self.lastActivityErrorMsgLbl.isHidden = false
-        self.refreshBtn.isHidden = false
-        self.errorIcon.isHidden = false
+        refreshBtn.setTitle("დარეფრეშება".uppercased(), for: .normal)
+        [lastActivityErrorMsgLbl,refreshBtn,errorIcon].forEach {  $0?.isHidden = false }
         if self.traitCollection.userInterfaceStyle == .dark {
             lastActivityErrorMsgLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             refreshBtn.alpha = 0.85
         }
-        refreshBtn.setTitle("დარეფრეშება".uppercased(), for: .normal)
     }
 }
 
@@ -87,7 +85,7 @@ extension MainView: MainViewApi {
     func showLastActivity(isEmpty: Bool) {
         self.stopLoading()
         isEmpty ? configureLastActivityIsEmptyView() : (self.countries = UserDefaults.standard.structArrayData(Country.self, forKey: Constants.Keys.lastAcitivtyDate))
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
 }
 

@@ -9,26 +9,26 @@
 import UIKit
 
 class MainCell: UICollectionViewCell {
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    
-        checkDarkMode()
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard UIApplication.shared.applicationState == .inactive else {
-            return
-        }
-        checkDarkMode()
-    }
-    
+        
     //MARK: IBOutlet
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var confirmedCasesLbl: UILabel!
     @IBOutlet weak var RecoveredNumberLbl: UILabel!
     @IBOutlet weak var deadNumberLbl: UILabel!
+    
+    
+    override func awakeFromNib() {
+         super.awakeFromNib()
+         checkDarkMode()
+     }
+     
+     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+         super.traitCollectionDidChange(previousTraitCollection)
+         guard UIApplication.shared.applicationState == .inactive else {
+             return
+         }
+         checkDarkMode()
+     }
     
     //MARK: View Setup
     func configure(with country: Country)  {

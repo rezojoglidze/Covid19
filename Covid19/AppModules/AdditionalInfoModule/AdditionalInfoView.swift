@@ -50,7 +50,18 @@ final class AdditionalInfoView: UserInterface {
             AdditionalInfo(title: "სულ გადრაცვლილი", description: String(country.totalDeaths)),
             AdditionalInfo(title: "ახალი გამოჯანმრთელებული", description: String(country.newRecovered)),
             AdditionalInfo(title: "სულ გამოჯანმრთელებული", description: String(country.totalRecovered))
-        ]
+    ]
+         configureDate(with: country.date)
+    }
+    
+    func configureDate(with lastUpdate: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ka")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: lastUpdate) {
+            dateFormatter.dateFormat = "HH:mm dd/MM/yyyy"
+            self.additionalInfo.append(AdditionalInfo(title: "ბოლო განახლება", description: dateFormatter.string(from: date)))
+        }
         collectionView.reloadData()
     }
 }
@@ -72,7 +83,7 @@ extension AdditionalInfoView: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdditionalCell", for: indexPath) as! AdditionalCell
-        cell.configure(with: additionalInfo[indexPath.row])
+        cell.setupCell(with: additionalInfo[indexPath.row])
         return cell
     }
     

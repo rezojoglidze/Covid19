@@ -83,7 +83,7 @@ extension MainView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainCell
-        cell.configure(with: countries[indexPath.row])
+        cell.setupCell(with: countries[indexPath.row])
         return cell
     }
     

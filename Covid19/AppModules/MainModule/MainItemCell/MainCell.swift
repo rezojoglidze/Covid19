@@ -17,11 +17,11 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var deadNumberLbl: UILabel!
 
     override func layoutSubviews() {
-        self.traitCollection.userInterfaceStyle == .dark ? configureView(isDarkTheme: true) : configureView(isDarkTheme: false)
+        self.traitCollection.userInterfaceStyle == .dark ? configureCell(isDarkTheme: true) : configureCell(isDarkTheme: false)
     }
     
     //MARK: View Setup
-    func configure(with country: Country)  {
+    func setupCell(with country: Country)  {
         self.confirmedCasesLbl.text = String(country.totalConfirmed)
         self.RecoveredNumberLbl.text = String(country.totalRecovered)
         self.deadNumberLbl.text = String(country.totalDeaths)
@@ -29,7 +29,7 @@ class MainCell: UICollectionViewCell {
     }
 
     
-    func configureView(isDarkTheme: Bool) {
+    func configureCell(isDarkTheme: Bool) {
         [RecoveredNumberLbl,confirmedCasesLbl,deadNumberLbl].forEach { (label) in
             isDarkTheme ? (label?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)) : (label?.textColor = #colorLiteral(red: 0.05882352941, green: 0.05098039216, blue: 0.1411764706, alpha: 1))
         }

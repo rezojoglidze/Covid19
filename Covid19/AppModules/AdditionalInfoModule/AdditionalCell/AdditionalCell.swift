@@ -16,7 +16,7 @@ class AdditionalCell: UICollectionViewCell {
 
     
     //MARK: View Setup
-    func configure(with additionalInfo: AdditionalInfo)  {
+    func setupCell(with additionalInfo: AdditionalInfo)  {
         self.titleTxt.text = additionalInfo.title
         self.descriptionTxt.text = String(additionalInfo.description)
     }

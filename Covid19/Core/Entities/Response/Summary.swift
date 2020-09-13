@@ -49,6 +49,7 @@ struct Country: Codable {
     let totalDeaths: Int
     let newRecovered: Int
     let totalRecovered: Int
+    let date: String
     
     enum CodingKeys: String, CodingKey {
         case country = "Country"
@@ -60,5 +61,6 @@ struct Country: Codable {
         case totalDeaths = "TotalDeaths"
         case newRecovered = "NewRecovered"
         case totalRecovered = "TotalRecovered"
+        case date = "Date"
     }
 }

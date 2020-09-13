@@ -27,7 +27,7 @@ final class AdditionalInfoView: UserInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        configureView()
+        setupNavigation()
     }
     
     //MARK: View Setup
@@ -37,11 +37,8 @@ final class AdditionalInfoView: UserInterface {
         collectionView.register(UINib(nibName: "AdditionalCell", bundle: nil), forCellWithReuseIdentifier: "AdditionalCell")
     }
     
-    func configureView() {
+    func setupNavigation() {
         navigationItem.title = "დეტალები"
-        if self.traitCollection.userInterfaceStyle != .dark {
-            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }
     }
     
     func updateAdditionalInfo(with country: Country) {

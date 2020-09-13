@@ -30,6 +30,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="GDK-Nk-XuM" secondAttribute="bottom" id="FhN-J6-pvm"/>
                             <constraint firstItem="GDK-Nk-XuM" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="5" id="cs4-PT-m2F"/>

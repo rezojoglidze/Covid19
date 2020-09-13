@@ -9,7 +9,7 @@
 import UIKit
 
 class MainCell: UICollectionViewCell {
-        
+    
     //MARK: IBOutlet
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var confirmedCasesLbl: UILabel!
@@ -18,17 +18,17 @@ class MainCell: UICollectionViewCell {
     
     
     override func awakeFromNib() {
-         super.awakeFromNib()
-         checkDarkMode()
-     }
-     
-     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-         super.traitCollectionDidChange(previousTraitCollection)
-         guard UIApplication.shared.applicationState == .inactive else {
-             return
-         }
-         checkDarkMode()
-     }
+        super.awakeFromNib()
+    
+        self.traitCollection.userInterfaceStyle == .dark ? configureView(isDarkTheme: true) : configureView(isDarkTheme: false)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard UIApplication.shared.applicationState == .inactive else { return }
+        
+        self.traitCollection.userInterfaceStyle == .dark ? configureView(isDarkTheme: true) : configureView(isDarkTheme: false)
+    }
     
     //MARK: View Setup
     func configure(with country: Country)  {
@@ -37,19 +37,13 @@ class MainCell: UICollectionViewCell {
         self.deadNumberLbl.text = String(country.totalDeaths)
         self.countryLbl.text = String(country.country)
     }
+
     
-    func checkDarkMode() {
-        if self.traitCollection.userInterfaceStyle == .dark {
-            configureCustomDesign(isDarkTheme: true)
-            [RecoveredNumberLbl,confirmedCasesLbl,deadNumberLbl].forEach { (label) in
-                label?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            }
-        } else {
-            configureCustomDesign(isDarkTheme: false)
+    func configureView(isDarkTheme: Bool) {
+        [RecoveredNumberLbl,confirmedCasesLbl,deadNumberLbl].forEach { (label) in
+            isDarkTheme ? (label?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)) : (label?.textColor = #colorLiteral(red: 0.05882352941, green: 0.05098039216, blue: 0.1411764706, alpha: 1))
         }
-    }
-    
-    func configureCustomDesign(isDarkTheme: Bool) {
+        
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.borderWidth = 2.0
         self.contentView.layer.borderColor = isDarkTheme ? #colorLiteral(red: 0.5568627451, green: 0.5529411765, blue: 0.6274509804, alpha: 1) : #colorLiteral(red: 0.5176470588, green: 0.4901960784, blue: 0.9333333333, alpha: 1)

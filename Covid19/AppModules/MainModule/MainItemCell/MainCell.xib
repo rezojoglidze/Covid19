@@ -112,7 +112,7 @@
                 <outlet property="countryLbl" destination="DtJ-fi-E8S" id="MzP-CI-5fS"/>
                 <outlet property="deadNumberLbl" destination="thB-SI-fqs" id="ydi-7J-ePN"/>
             </connections>
-            <point key="canvasLocation" x="-445" y="123"/>
+            <point key="canvasLocation" x="-109" y="48"/>
         </collectionViewCell>
     </objects>
     <resources>

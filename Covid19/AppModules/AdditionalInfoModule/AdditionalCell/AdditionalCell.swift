@@ -11,13 +11,11 @@ import UIKit
 class AdditionalCell: UICollectionViewCell {
     
     //MARK: IBOutlet
-
     @IBOutlet weak var titleTxt: UILabel!
     @IBOutlet weak var descriptionTxt: UILabel!
 
     
     //MARK: View Setup
-
     func configure(with additionalInfo: AdditionalInfo)  {
         self.titleTxt.text = additionalInfo.title
         self.descriptionTxt.text = String(additionalInfo.description)

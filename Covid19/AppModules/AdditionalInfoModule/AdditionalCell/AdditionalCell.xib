@@ -22,19 +22,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-xb-AMd">
-                        <rect key="frame" x="16" y="10" width="23" height="17"/>
+                        <rect key="frame" x="8" y="8" width="23" height="17"/>
                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-55Roman" family="Helvetica Neue LT GEO" pointSize="14"/>
                         <color key="textColor" red="0.55686274509803924" green="0.55294117647058827" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQe-O8-gf8">
-                        <rect key="frame" x="339.5" y="10" width="35.5" height="17.5"/>
+                        <rect key="frame" x="339.5" y="8" width="35.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc0-Nb-tqL">
-                        <rect key="frame" x="16" y="32" width="375" height="1"/>
+                        <rect key="frame" x="8" y="30" width="383" height="1"/>
                         <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="c38-oR-kH2"/>
@@ -51,8 +51,8 @@
                 <constraint firstAttribute="trailing" secondItem="PQe-O8-gf8" secondAttribute="trailing" constant="16" id="e5R-fD-WdP"/>
                 <constraint firstAttribute="trailing" secondItem="nc0-Nb-tqL" secondAttribute="trailing" id="oB7-Rs-ktx"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nc0-Nb-tqL" secondAttribute="bottom" id="tew-GC-mqO"/>
-                <constraint firstItem="ZuT-xb-AMd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="u7X-AV-ukb"/>
-                <constraint firstItem="ZuT-xb-AMd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="y4d-MX-d5z"/>
+                <constraint firstItem="ZuT-xb-AMd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="u7X-AV-ukb"/>
+                <constraint firstItem="ZuT-xb-AMd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="y4d-MX-d5z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="391" height="41"/>

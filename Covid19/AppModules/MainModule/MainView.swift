@@ -17,30 +17,25 @@ final class MainView: HomeViewController {
    
     //MARK: IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var lastActivityErrorMsgLbl: UILabel!
-    @IBOutlet weak var errorIcon: UIImageView!
     @IBOutlet weak var refreshBtn: UIButton!
+    @IBOutlet weak var lastActivityErrorView: UIView!
     
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureCollectionView()
         setupNavigation()
-        checkDarkTheme()
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard UIApplication.shared.applicationState == .inactive else { return }
-
-        self.traitCollection.userInterfaceStyle != .dark ? (view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)) : (view.backgroundColor = UIColor.black)
+    override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
     }
     
     //MARK: IBActions
     @IBAction func refreshBtnTapped(_ sender: Any) {
         self.startLoading()
-        [lastActivityErrorMsgLbl,refreshBtn,errorIcon].forEach { $0?.isHidden = true}
+        lastActivityErrorView.isHidden = true
         presenter.didTapRefreshBtn()
     }
     
@@ -57,19 +52,9 @@ final class MainView: HomeViewController {
         navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.4392156863, green: 0.3882352941, blue: 0.9176470588, alpha: 1)
     }
     
-    func checkDarkTheme() {
-        if self.traitCollection.userInterfaceStyle != .dark {
-            view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }
-    }
-    
-    func configureLastActivityIsEmptyView() {
+    func configureLastActivityEmptyView() {
         refreshBtn.setTitle("დარეფრეშება".uppercased(), for: .normal)
-        [lastActivityErrorMsgLbl,refreshBtn,errorIcon].forEach {  $0?.isHidden = false }
-        if self.traitCollection.userInterfaceStyle == .dark {
-            lastActivityErrorMsgLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            refreshBtn.alpha = 0.85
-        }
+        lastActivityErrorView.isHidden = false
     }
 }
 
@@ -84,7 +69,7 @@ extension MainView: MainViewApi {
     
     func showLastActivity(isEmpty: Bool) {
         self.stopLoading()
-        isEmpty ? configureLastActivityIsEmptyView() : (self.countries = UserDefaults.standard.structArrayData(Country.self, forKey: Constants.Keys.lastAcitivtyDate))
+        isEmpty ? configureLastActivityEmptyView() : (self.countries = UserDefaults.standard.structArrayData(Country.self, forKey: Constants.Keys.lastAcitivtyDate))
         collectionView.reloadData()
     }
 }

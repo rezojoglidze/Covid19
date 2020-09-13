@@ -26,10 +26,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-Fd-ZU8">
-                                <rect key="frame" x="0.0" y="49" width="414" height="847"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FR6-YX-vHH">
+                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="etI-by-020">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u4f-QO-0AO">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -37,62 +37,78 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სამწუხაროდ, თქვენ არ გაქვთ ბოლო აქტივობა" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-eE-sZu">
-                                <rect key="frame" x="60" y="426.5" width="294" height="43.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="18"/>
-                                <color key="textColor" red="0.058823529411764705" green="0.050980392156862744" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-eT-3fm">
-                                <rect key="frame" x="20" y="515" width="374" height="60"/>
-                                <color key="backgroundColor" red="0.4392156862745098" green="0.38823529411764707" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tz4-fu-WTh">
+                                <rect key="frame" x="0.0" y="323" width="414" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სამწუხაროდ, თქვენ არ გაქვთ ბოლო აქტივობა" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-eE-sZu">
+                                        <rect key="frame" x="60" y="104" width="294" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-eT-3fm">
+                                        <rect key="frame" x="20" y="172.5" width="374" height="60"/>
+                                        <color key="backgroundColor" red="0.4392156862745098" green="0.38823529411764707" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="w6a-Uq-1oj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="refreshBtnTapped:" destination="xqD-av-Raz" eventType="touchUpInside" id="uE2-p1-X6m"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FailedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-WL-kbv">
+                                        <rect key="frame" x="175" y="20" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Jgl-JF-tal"/>
+                                            <constraint firstAttribute="height" constant="64" id="zEg-sx-ps0"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="9UO-IH-CTv"/>
+                                    <constraint firstItem="ydh-WL-kbv" firstAttribute="centerX" secondItem="Tz4-fu-WTh" secondAttribute="centerX" id="86U-wg-jAB"/>
+                                    <constraint firstAttribute="height" constant="250" id="H3C-9d-RSR"/>
+                                    <constraint firstItem="UsR-eE-sZu" firstAttribute="leading" secondItem="Tz4-fu-WTh" secondAttribute="leading" constant="60" id="XaT-xk-XoM"/>
+                                    <constraint firstAttribute="trailing" secondItem="UsR-eE-sZu" secondAttribute="trailing" constant="60" id="gDZ-Ne-02V"/>
+                                    <constraint firstItem="UsR-eE-sZu" firstAttribute="top" secondItem="ydh-WL-kbv" secondAttribute="bottom" constant="20" id="o7P-AD-ziA"/>
+                                    <constraint firstAttribute="trailing" secondItem="TRb-eT-3fm" secondAttribute="trailing" constant="20" id="qf2-VI-7qk"/>
+                                    <constraint firstItem="ydh-WL-kbv" firstAttribute="top" secondItem="Tz4-fu-WTh" secondAttribute="top" constant="20" id="tTg-qY-7Pk"/>
+                                    <constraint firstItem="TRb-eT-3fm" firstAttribute="leading" secondItem="Tz4-fu-WTh" secondAttribute="leading" constant="20" id="teV-ni-KYt"/>
+                                    <constraint firstItem="TRb-eT-3fm" firstAttribute="top" secondItem="UsR-eE-sZu" secondAttribute="bottom" constant="25" id="wxX-Fj-vNK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="15"/>
-                                <state key="normal" title="დარეფრეშება">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="refreshBtnTapped:" destination="xqD-av-Raz" eventType="touchUpInside" id="uE2-p1-X6m"/>
-                                </connections>
-                            </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FailedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-WL-kbv">
-                                <rect key="frame" x="175" y="337.5" width="64" height="64"/>
-                            </imageView>
+                            </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ydh-WL-kbv" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="Ibk-ao-pXQ"/>
-                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="OQb-J4-Clx"/>
-                            <constraint firstItem="TRb-eT-3fm" firstAttribute="top" secondItem="UsR-eE-sZu" secondAttribute="bottom" constant="45" id="OR0-Rz-IxV"/>
-                            <constraint firstAttribute="trailing" secondItem="UsR-eE-sZu" secondAttribute="trailing" constant="60" id="QxE-mh-Pxd"/>
-                            <constraint firstItem="UsR-eE-sZu" firstAttribute="top" secondItem="ydh-WL-kbv" secondAttribute="bottom" constant="25" id="XQ4-H3-Eyg"/>
-                            <constraint firstItem="UsR-eE-sZu" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="60" id="aZq-Si-fNG"/>
-                            <constraint firstAttribute="bottom" secondItem="y5V-Fd-ZU8" secondAttribute="bottom" id="bdm-oz-WGf"/>
-                            <constraint firstAttribute="trailing" secondItem="y5V-Fd-ZU8" secondAttribute="trailing" id="cCw-eI-r2o"/>
-                            <constraint firstItem="TRb-eT-3fm" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" constant="20" id="egR-8l-7vp"/>
-                            <constraint firstItem="y5V-Fd-ZU8" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="5" id="fLo-IE-oe0"/>
-                            <constraint firstItem="UsR-eE-sZu" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="ghf-6D-1WQ"/>
-                            <constraint firstItem="UsR-eE-sZu" firstAttribute="centerY" secondItem="kgt-o0-aP8" secondAttribute="centerY" id="kQ7-mC-FMd"/>
-                            <constraint firstAttribute="trailing" secondItem="TRb-eT-3fm" secondAttribute="trailing" constant="20" id="nAe-tU-2Rt"/>
+                            <constraint firstAttribute="trailing" secondItem="Tz4-fu-WTh" secondAttribute="trailing" id="7F5-IB-Wuf"/>
+                            <constraint firstItem="Tz4-fu-WTh" firstAttribute="centerY" secondItem="kgt-o0-aP8" secondAttribute="centerY" id="PUm-8U-5VO"/>
+                            <constraint firstItem="FR6-YX-vHH" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="SIM-ZX-NEj"/>
+                            <constraint firstItem="FR6-YX-vHH" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="4" id="Ze9-rB-A73"/>
+                            <constraint firstItem="Tz4-fu-WTh" firstAttribute="centerX" secondItem="kgt-o0-aP8" secondAttribute="centerX" id="gci-HT-J31"/>
+                            <constraint firstItem="Tz4-fu-WTh" firstAttribute="leading" secondItem="kgt-o0-aP8" secondAttribute="leading" id="plM-r6-mmw"/>
+                            <constraint firstAttribute="trailing" secondItem="FR6-YX-vHH" secondAttribute="trailing" id="qhU-pu-ZBB"/>
+                            <constraint firstAttribute="bottom" secondItem="FR6-YX-vHH" secondAttribute="bottom" id="wWe-v3-Rnw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="y5V-Fd-ZU8" id="9dz-f3-rAu"/>
-                        <outlet property="errorIcon" destination="ydh-WL-kbv" id="x8R-pF-hF4"/>
-                        <outlet property="lastActivityErrorMsgLbl" destination="UsR-eE-sZu" id="9Tb-93-9KN"/>
+                        <outlet property="collectionView" destination="FR6-YX-vHH" id="hxO-sF-QW2"/>
+                        <outlet property="lastActivityErrorView" destination="Tz4-fu-WTh" id="ff4-dk-fKC"/>
                         <outlet property="refreshBtn" destination="TRb-eT-3fm" id="ELd-jd-nES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-AG-NXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-304" y="232"/>
+            <point key="canvasLocation" x="-304.34782608695656" y="231.69642857142856"/>
         </scene>
     </scenes>
     <resources>

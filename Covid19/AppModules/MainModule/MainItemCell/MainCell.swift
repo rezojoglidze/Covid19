@@ -15,18 +15,8 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var confirmedCasesLbl: UILabel!
     @IBOutlet weak var RecoveredNumberLbl: UILabel!
     @IBOutlet weak var deadNumberLbl: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    
-        self.traitCollection.userInterfaceStyle == .dark ? configureView(isDarkTheme: true) : configureView(isDarkTheme: false)
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard UIApplication.shared.applicationState == .inactive else { return }
-        
+
+    override func layoutSubviews() {
         self.traitCollection.userInterfaceStyle == .dark ? configureView(isDarkTheme: true) : configureView(isDarkTheme: false)
     }
     
